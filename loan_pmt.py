@@ -1,10 +1,6 @@
-def calculate_loan_payment(interest, term, pv):
-    # interest: monthly interest rate as a decimal
-    # term: number of payments
-    # pv: present value (loan amount)
-    
-    if interest == 0:
-        return pv / term
-    
-    payment = (pv * interest) / (1 - (1 + interest) ** -term)
+def calculate_loan_payment(interest, term, present_value):
+    monthly_interest = (interest / 100) / 12
+    if monthly_interest == 0:
+        return present_value / term
+    payment = (present_value * monthly_interest) / (1 - (1 + monthly_interest) ** -term)
     return payment
