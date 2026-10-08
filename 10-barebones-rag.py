@@ -13,7 +13,7 @@ Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 @st.cache_resource
 def get_query_engine():
     documents = SimpleDirectoryReader("data/handbook").load_data()
-    index = VectorStoreIndex.from_documents(documents)
+    index = VectorStoreIndex.from_documents(documents)s
     return index.as_query_engine()
 
 st.title("Bare Bones Rag Chatbot")
